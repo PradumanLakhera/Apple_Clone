@@ -5,7 +5,7 @@ const Hero = () => {
    <section id = "hero">
     <div> 
     <h1 className='Macbook'> Macbook Pro</h1>
-    <img src = "title.png" alt = "Macbook Title" />
+    <img src = "/title.png" alt = "Macbook Title" />
     </div>
     <video src = "/videos/hero.mp4" autoPlay muted playsInline />
     <button className = "buy-btn"> Buy </button>
