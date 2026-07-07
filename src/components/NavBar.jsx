@@ -9,9 +9,11 @@ const navLinks = [
 ];
 
 const NavBar = () => {
+  const base = import.meta.env.BASE_URL;
+
   return (
     <nav className="navbar">
-      <img src="/logo.svg" alt="Apple Logo" className="logo" />
+      <img src={`${base}logo.svg`} alt="Apple Logo" className="logo" />
 
       <ul className="nav-links">
         {navLinks.map((link) => (
@@ -22,8 +24,16 @@ const NavBar = () => {
       </ul>
 
       <div className="nav-icons">
-        <img src="/search.svg" alt="Search" className="icon" />
-        <img src="/cart.svg" alt="Cart" className="icon" />
+        <img
+          src={`${base}search.svg`}
+          alt="Search"
+          className="icon"
+        />
+        <img
+          src={`${base}cart.svg`}
+          alt="Cart"
+          className="icon"
+        />
       </div>
     </nav>
   );
