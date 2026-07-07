@@ -1,23 +1,48 @@
+import clsx from "clsx";
+import useMacbookStore from "../store";
+
 const ProductViewer = () => {
+  const { color, scale, setColor, setScale } = useMacbookStore();
+
   return (
-    <section id = "product-viewer">
-        <h2> Take a closer look. </h2>    
-        <div className="controls">
-            <p className="info"> MacbookPro 16 in Silver / Space Black</p>
+    <section id="product-viewer">
+      <h2>Take a closer look.</h2>
+      <p className="text-white">Render Canvas</p>
 
-            <div className="flex-center gap-5 mt-5">
-                <div className="color-control">
-                    <div className="bg-neutral-300">
-                        <div className="bg-neutral-900">
+      <div className="controls">
+        <p className="info">
+          MacBook Pro 16" in Silver / Space Black
+        </p>
 
-                        </div>
-                        </div> </div>
+        <div className="control-row">
+          {/* Color Picker */}
+          <div className="color-control">
+            <div
+              onClick={() => setColor("#adb5bd")}
+              className={clsx(
+                "bg-neutral-300",
+                color === "#adb5bd" && "active"
+              )}
+            />
 
-            </div>
+            <div
+              onClick={() => setColor("#2e2c2e")}
+              className={clsx(
+                "bg-neutral-900",
+                color === "#2e2c2e" && "active"
+              )}
+            />
+          </div>
+
+          {/* Size Picker */}
+          <div className="size-control">
+            <button onClick={() => setScale(14)}>14"</button>
+            <button onClick={() => setScale(16)}>16"</button>
+          </div>
         </div>
-        
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProductViewer
+export default ProductViewer;
